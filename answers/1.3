@@ -1,0 +1,31 @@
+git add .
+git status
+git commit -m "identity.md"
+git push origin main
+
+--------------------------------------------------------------------------------
+PS C:\Users\tipss\ml_ops\lab-git-ci-jinyoung-plus> git add .
+PS C:\Users\tipss\ml_ops\lab-git-ci-jinyoung-plus> git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   identity.md
+
+PS C:\Users\tipss\ml_ops\lab-git-ci-jinyoung-plus> git commit -m "identity.md"
+[main 833ede2] identity.md
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+PS C:\Users\tipss\ml_ops\lab-git-ci-jinyoung-plus> git push origin main
+fatal: credential-cache unavailable; no unix socket support
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 686 bytes | 228.00 KiB/s, done.
+Total 7 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/cours-esilv/lab-git-ci-jinyoung-plus.git
+   4ce21b9..833ede2  main -> main
+PS C:\Users\tipss\ml_ops\lab-git-ci-jinyoung-plus>
