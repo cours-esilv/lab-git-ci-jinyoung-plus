@@ -1,30 +1,36 @@
 
-git checkout -b snape
-
 git branch -a
 
-git checkout main
-
-git merge snape
+git merge origin/snape
 
 ----------------------------------------------------------------------------
-PS C:\Users\tipss\ml_ops\lab-git-ci-jinyoung-plus> git checkout -b snape
-Switched to a new branch 'snape'
 PS C:\Users\tipss\ml_ops\lab-git-ci-jinyoung-plus> git branch -a
-  main
-* snape
+  feature/Jko
+* main
   remotes/origin/HEAD -> origin/main
+  remotes/origin/feature/Jko
   remotes/origin/main
   remotes/origin/snape
-PS C:\Users\tipss\ml_ops\lab-git-ci-jinyoung-plus> git checkout main
-Switched to branch 'main'
-A       answers/1.3
-A       answers/1.4
-A       answers/1.5
-A       answers/1.6
-A       answers/1.7.1
-A       answers/1.7.2
-Your branch is up to date with 'origin/main'.
-PS C:\Users\tipss\ml_ops\lab-git-ci-jinyoung-plus> git merge snape
-Already up to date.
-PS C:\Users\tipss\ml_ops\lab-git-ci-jinyoung-plus>
+PS C:\Users\tipss\ml_ops\lab-git-ci-jinyoung-plus> git merge origin/snape
+Auto-merging Readme.md
+Auto-merging identity.md
+Merge made by the 'ort' strategy.
+ questions.md | 84 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 84 insertions(+)
+ create mode 100644 questions.md
+ PS C:\Users\tipss\ml_ops\lab-git-ci-jinyoung-plus> dir
+
+
+     디렉터리: C:\Users\tipss\ml_ops\lab-git-ci-jinyoung-plus
+
+
+ Mode                 LastWriteTime         Length Name
+ ----                 -------------         ------ ----
+ d-----      2024-01-18   오전 8:33                .github
+ d-----      2024-01-18  오전 10:36                answers
+ d-----      2024-01-18   오전 8:33                docs
+ d-----      2024-01-18   오전 9:21                src
+ -a----      2024-01-18   오전 9:31             70 identity.md
+ -a----      2024-01-18   오전 8:33           1233 pom.xml
+ -a----      2024-01-18  오전 10:37           1875 questions.md
+ -a----      2024-01-18   오전 8:33          11848 Readme.md
