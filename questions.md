@@ -77,7 +77,7 @@ A branch is : B
 
 ### Question 10
 
-How can I find out what changes were made in the last commit? A
+How can I find out what changes were made in the last commit?  A
 
 - A. Use `git diff HEAD HEAD~1`.
 - B. Use **gitLens** in VSCode with the history view.
