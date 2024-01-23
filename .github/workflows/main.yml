@@ -1,39 +1,33 @@
-name: CI
+name: Java CI/CD Pipeline
 
-# This pipeline runs when pushed to the main branch and branches starting with feature/
 on:
   push:
-    branches:
-      - main
-      - 'feature/*'
+    branches: [ main, feature/** ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    # Check out steps
     - uses: actions/checkout@v2
 
-    # Java 8 setting steps
     - name: Set up JDK 8
       uses: actions/setup-java@v2
       with:
         java-version: '8'
         distribution: 'adopt'
 
-    # Steps to build an application using Maven
     - name: Build with Maven
       run: mvn --batch-mode --update-snapshots package
 
-    # Steps to post unit test results
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action@v1
       if: always()
       with:
         files: target/**/*.xml
 
-    # Build artifact upload steps
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.4
       with:
@@ -45,23 +39,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Check out steps
     - uses: actions/checkout@v2
 
-    # Docker setting steps
-    - name: Install Docker
+    - name: Set up Docker
       uses: docker/setup-buildx-action@v1
-      with:
-        install: true
 
-    # Docker image build steps
-    - name: Docker build
+    - name: Build Docker image
       run: |
-        docker build -t my-app:1.0 .
+        docker build -t my-java-app .
+        docker images
 
-    # Docker 이미지를 GitHub Container Registry에 푸시하는 스텝 (선택적)
-    # - name: Push to GitHub Container Registry
-    #   run: |
-    #     echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-    #     docker push ghcr.io/your-username/my-app:1.0
+    - name: Push Docker image
+      run: |
+        echo "DOCKER_HUB_ACCESS_TOKEN=${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
+        docker push my-java-app:latest
 
