@@ -54,7 +54,6 @@ Where are previous versions of files hidden in git? B
 ### Question 7
 
 To change branch we use: B
-
 - A. `git reflog <branch name>`
 - B. `git checkout <branch name>`
 - C. `git clone <branch name>`
@@ -77,7 +76,7 @@ A branch is : B
 
 ### Question 10
 
-How can I find out what changes were made in the last commit? A
+How can I find out what changes were made in the last commit?  A
 
 - A. Use `git diff HEAD HEAD~1`.
 - B. Use **gitLens** in VSCode with the history view.
