@@ -27,3 +27,6 @@ jobs:
         if: always()
         with:
           files: target/**/*.xml
+        permissions:
+          checks: write
+          pull-requests: write
