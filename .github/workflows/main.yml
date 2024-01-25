@@ -24,7 +24,7 @@ jobs:
         run: mvn --batch-mode --update-snapshots package
 
       - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1
+        uses: EnricoMi/publish-unit-test-result-action@v2 # 가정된 최신 버전으로 변경
         if: always()
         with:
           files: target/**/*.xml
